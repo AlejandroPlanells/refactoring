@@ -1,7 +1,5 @@
 package com.kreitek.refactor.bien.Documents;
 
-import java.util.Locale;
-
 public class Nie extends Document{
 
 
@@ -25,7 +23,6 @@ public class Nie extends Document{
             }else if (nieFirstLetter == 'Z'){
                 nie = "2" + nie.substring(1,9);
             }else{
-                System.out.println("La letra no es ni X, Y, Z, por lo que no es NIE.");
                 return false;
             }
 
@@ -39,11 +36,11 @@ public class Nie extends Document{
         }
     }
 
-    public boolean isValidLetter(String dniNumbers, String dni) {
-        String dniChars = "TRWAGMYFPDXBNJZSQVHLCKE";
-        int dniNumValidate = Integer.parseInt(dniNumbers) % 23;
-        char dniLetter = dni.charAt(8);
-        if (dniChars.charAt(dniNumValidate) == dniLetter){
+    public boolean isValidLetter(String nieNumbers, String nie) {
+        String nieChars = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int nieNumValidate = Integer.parseInt(nieNumbers) % 23;
+        char nieLetter = nie.charAt(8);
+        if (nieChars.charAt(nieNumValidate) == nieLetter){
             return true;
         }else{
             return false;

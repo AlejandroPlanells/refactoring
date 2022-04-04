@@ -1,5 +1,7 @@
 package com.kreitek.refactor.bien.Documents;
 
+import java.util.Locale;
+
 public class Dni extends Document{
 
 
@@ -9,18 +11,15 @@ public class Dni extends Document{
 
     @Override
     public boolean validate() {
-        String dni = this.getDocumentNumber().trim().replaceAll(" ", "");
-
+        String dni = this.getDocumentNumber().trim().replaceAll(" ", "").toUpperCase();
 
         if (dni.length() != 9){
             return false;
         }else{
             String dniNumbers = dni.substring(0,8);
             if (isNumeric(dniNumbers) && isValidLetter(dniNumbers, dni)){
-                System.out.println("El DNI es correcto");
                 return true;
             }else {
-                System.out.println("El DNI es incorrecto");
                 return false;
             }
         }
