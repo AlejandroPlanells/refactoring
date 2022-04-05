@@ -10,17 +10,9 @@ import java.util.List;
 
 class  Main {
     public static void main(String args[]) {
-
         printBanner();
         List<Document> documents = createDocuments();
         printAllDocuments(documents);
-
-    }
-
-    private static void printAllDocuments(List<Document> documents) {
-        for (Document document: documents) {
-            System.out.printf("DNI %s es: %s %n",document.getDocumentNumber(),document.validate());
-        }
     }
 
     private static List<Document> createDocuments() {
@@ -40,6 +32,12 @@ class  Main {
         documents.add(cifFalse);
 
         return documents;
+    }
+
+    private static void printAllDocuments(List<Document> documents) {
+        for (Document document: documents) {
+            System.out.printf("DNI %s es: %s %n", document.getDocumentNumber(), document.validate());
+        }
     }
 
     private static void printBanner() {

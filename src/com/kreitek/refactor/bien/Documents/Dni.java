@@ -1,7 +1,5 @@
 package com.kreitek.refactor.bien.Documents;
 
-import java.util.Locale;
-
 public class Dni extends Document{
 
 

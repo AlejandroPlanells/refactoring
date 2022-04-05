@@ -20,7 +20,6 @@ public class Cif extends Document{
             }else {
                 return false;
             }
-
         }else{
             return false;
         }
@@ -59,7 +58,6 @@ public class Cif extends Document{
             }
         }
         return true;
-
     }
 
     private int cifCalculeNumCtrl(int cifSumaParesImpares) {
@@ -72,18 +70,18 @@ public class Cif extends Document{
 
     private int cifSumaParesImpares(String cif) {
         String cifNumbers = cif.substring(1,8);
-        Integer sumaPares = 0, sumaImpares = 0;
+        int sumaPares = 0;
 
         for (int i = 1; i <= cifNumbers.length() - 1; i = i + 2) {
             sumaPares += Integer.parseInt(cifNumbers.substring(i, i + 1));
 
         }
 
+        int sumaImpares = 0;
         for (int i = 0; i <= cifNumbers.length() - 1; i = i + 2) {
             Integer cal = Integer.parseInt(cifNumbers.substring(i, i + 1)) * 2;
             if (cal.toString().length() > 1) {
-                cal = Integer.parseInt(cal.toString().substring(0, 1))
-                        + Integer.parseInt(cal.toString().substring(1, 2));
+                cal = Integer.parseInt(cal.toString().substring(0, 1)) + Integer.parseInt(cal.toString().substring(1, 2));
             }
             sumaImpares += cal;
         }
